@@ -1,0 +1,78 @@
+{
+    "plus_code": {
+        "compound_code": "MP5R+3GR Portland, ME, USA",
+        "global_code": "87MFMP5R+3GR"
+    },
+    "results": [
+        {
+            "address_components": [
+                {
+                    "long_name": "Portland",
+                    "short_name": "Portland",
+                    "types": [
+                        "locality",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Cumberland County",
+                    "short_name": "Cumberland County",
+                    "types": [
+                        "administrative_area_level_2",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Maine",
+                    "short_name": "ME",
+                    "types": [
+                        "administrative_area_level_1",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "United States",
+                    "short_name": "US",
+                    "types": [
+                        "country",
+                        "political"
+                    ]
+                }
+            ],
+            "formatted_address": "Portland, ME, USA",
+            "geometry": {
+                "bounds": {
+                    "northeast": {
+                        "lat": 43.727658,
+                        "lng": -70.0769348
+                    },
+                    "southwest": {
+                        "lat": 43.6063629,
+                        "lng": -70.3460949
+                    }
+                },
+                "location": {
+                    "lat": 43.6590993,
+                    "lng": -70.2568189
+                },
+                "location_type": "APPROXIMATE",
+                "viewport": {
+                    "northeast": {
+                        "lat": 43.727658,
+                        "lng": -70.0769348
+                    },
+                    "southwest": {
+                        "lat": 43.6063629,
+                        "lng": -70.3460949
+                    }
+                }
+            },
+            "place_id": "ChIJLe6wqnKcskwRKfpyM7W2nX4",
+            "types": [
+                "locality",
+                "political"
+            ]
+        }
+    ],
+    "status": "OK"
+}
