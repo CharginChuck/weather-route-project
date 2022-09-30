@@ -14,7 +14,7 @@ route_data = rs.get_route_data(origin=origin, destination=destination)
 route_steps = route_data['steps']
 
 # Below is temporary just to help visualize and work with the json data
-with open('route_data.json', 'w') as file:
+with open('json/route_data.json', 'w') as file:
     json.dump(obj=route_steps, fp=file, indent=4)
 
 lm = ListManager(route_steps=route_steps)

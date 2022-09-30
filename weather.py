@@ -1,7 +1,7 @@
 import requests
 import json
+from creds import WEATHER_API_KEY
 
-WEATHER_API_KEY = '69f04e4613056b159c2761a9d9e664d2'
 
 URL = 'https://api.openweathermap.org/data/2.5/onecall'
 # 'lat': 35.151409,

@@ -1,4 +1,5 @@
 import requests
+from creds import GOOGLE_API_KEY
 
 GOOGLE_API_KEY = 'AIzaSyAoH0BveJ2ra5H8osdVLkzTYAF2LHjbEe4'
 endpoint = f'https://maps.googleapis.com/maps/api/directions/json?key={GOOGLE_API_KEY}'
