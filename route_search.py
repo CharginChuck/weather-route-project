@@ -1,7 +1,7 @@
 import requests
 from creds import GOOGLE_API_KEY
+import json
 
-GOOGLE_API_KEY = 'AIzaSyAoH0BveJ2ra5H8osdVLkzTYAF2LHjbEe4'
 endpoint = f'https://maps.googleapis.com/maps/api/directions/json?key={GOOGLE_API_KEY}'
 
 
@@ -14,6 +14,8 @@ class RouteSearch:
         response = requests.get(url=endpoint, params=parameters)
         response.raise_for_status()
         data = response.json()
+        with open('route_data.json', 'w') as file:
+            json.dump(obj=data, fp=file, indent=4)
         return data['routes'][0]['legs'][0]
 
     def reverse_geocode(self, latlon):

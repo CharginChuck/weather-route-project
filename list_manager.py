@@ -42,9 +42,11 @@ class ListManager():
             x += item
             self.estimated_time_list.append(x/60)
 
-    def refine_lists(self):
-        """This formula will remove items from both coordinate lists if the distance/time
-         hasn't been great enough to warrant a new weather check, and it will also insert items to
-         the list if the distance between steps is large enough to warrant it"""
+    def show_info(self):
+        len_weather_data_list = len(self.weather_data_list)
+        print(f'length weather data list: {len_weather_data_list}')
+        len_est_time_list = len(self.estimated_time_list)
+        print(f'length estimated time list: {len_est_time_list}')
+
 
 

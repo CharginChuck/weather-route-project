@@ -7,13 +7,14 @@ from datetime import datetime, timedelta
 origin = input('Enter origin (e.g. Atlanta, GA): ')
 destination = input('Enter destination (e.g. Portland, ME) :')
 hours_to_departure = int(input('In how many hours will you leave? '))
+print('Processing...')
 
 # RouteSearch uses Google Maps Directions API to pull route data for the defined origin and destination
 rs = RouteSearch()
 route_data = rs.get_route_data(origin=origin, destination=destination)
 route_steps = route_data['steps']
 
-# Below is temporary just to help visualize and work with the json data
+# Below is just to help visualize and work with the json data
 with open('json/route_data.json', 'w') as file:
     json.dump(obj=route_steps, fp=file, indent=4)
 
@@ -48,7 +49,10 @@ no_rain = True
 """I moved the reverse geocode search in here instead of pre-searching and populating the city list above 
 to reduce the amount of geocoding requests the program was making"""
 
+# lm.show_info()
+
 now = datetime.now()
+weather_list = []
 for x in range(lm.route_length):
     weather_description = lm.weather_data_list[x][lm.estimated_time_list[x]]['weather'][0]['description']
     time_at_route_step = now + timedelta(hours=lm.estimated_time_list[x])
@@ -56,7 +60,13 @@ for x in range(lm.route_length):
     if 'rain' in weather_description or 'snow' in weather_description:
         no_rain = False
         city = rs.reverse_geocode(lm.latlon_list[x])
-        print(f'Weather forecast for {city} looks like {weather_description} at around {time_at_route_step}')
+        current_item = (f'Weather forecast for {city} looks like {weather_description} at around {time_at_route_step}')
+        if current_item not in weather_list:
+            weather_list.append(current_item)
 
-if no_rain == True:
-    print("After searching through your route, we haven't found any inclement weather.  Have a great trip! :)")
+if no_rain:
+    weather_list.append("\nAfter searching through your route, we haven't found any inclement weather.  "
+                     "Have a great trip! :)")
+
+for item in weather_list:
+    print(item)
