@@ -1,13 +1,11 @@
 average_speed = 60
 
-
 class ListManager():
     def __init__(self, route_steps):
         self.route_steps = route_steps
         self.lon_list = []
         self.lat_list = []
         self.latlon_list = []
-        self.city_list = []
         self.distance_list = []
         self.total_distance_list = []
         self.get_lists()

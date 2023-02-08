@@ -5,7 +5,7 @@ from weather import Weather
 from datetime import datetime, timedelta
 
 origin = input('Enter origin (e.g. Atlanta, GA): ')
-destination = input('Enter destination (e.g. Portland, ME) :')
+destination = input('Enter destination (e.g. Portland, ME): ')
 hours_to_departure = int(input('In how many hours will you leave? '))
 print('Processing...')
 
@@ -32,24 +32,11 @@ rounded_time_plus_hours_to_departure = [time + hours_to_departure for time in ro
 # Feed the new list back into the list manager
 lm.estimated_time_list = rounded_time_plus_hours_to_departure
 
-# print()
-# print(lm.latlon_list)
-# print(len(lm.latlon_list))
-
-
-# Populate the city list
-# for x in range(len(lm.latlon_list)):
-#     lm.city_list.append(rs.reverse_geocode(lm.latlon_list[x]))
-# print(lm.city_list)
-
-
 # This boolean will be set to False if there is any inclement weather found throughout the trip
 no_rain = True
 # Check each step for inclement weather at estimated time
 """I moved the reverse geocode search in here instead of pre-searching and populating the city list above 
 to reduce the amount of geocoding requests the program was making"""
-
-# lm.show_info()
 
 now = datetime.now()
 weather_list = []
